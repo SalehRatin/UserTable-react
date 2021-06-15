@@ -1,9 +1,16 @@
-import Home from "./Home/home";
+import Home from "./home/home";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import EditUserPage from "./editUser/editUserPage";
 
 function App() {
   return (
     <div>
-      <Home />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path={"/:userId"} component={EditUserPage} />
+          <Route path={"/"} component={Home} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
